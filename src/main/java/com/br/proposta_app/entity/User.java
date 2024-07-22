@@ -5,24 +5,24 @@ import lombok.*;
 
 import java.util.UUID;
 
-@Entity(name = "Usuario")
-@Table(name = "usuarios")
+@Entity(name = "User")
+@Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
-public class Usuario {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private String nome;
-    private String sobrenome;
+    private String name;
+    private String lastname;
     private String cpf;
-    private String telefone;
-    private Double renda;
+    private String phone;
+    private Double income;
 
-    @OneToOne(mappedBy = "usuario")
-    private Proposta proposta;
+    @OneToOne(mappedBy = "user")
+    private Proposal proposal;
 }

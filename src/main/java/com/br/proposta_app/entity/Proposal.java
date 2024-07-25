@@ -1,7 +1,11 @@
 package com.br.proposta_app.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity(name = "Proposal")
 @Table(name = "proposals")
@@ -22,7 +26,7 @@ public class Proposal {
     private boolean integrated;
     private String observation;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "user_id")
     private User user;
 }

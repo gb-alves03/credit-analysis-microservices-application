@@ -13,11 +13,12 @@ import java.util.UUID;
 @Getter
 @Setter
 public class ProposalResponseDto {
-    private UUID id;
+
+    private Long id;
     private String name;
     private String lastName;
-    private String phone;
     private String cpf;
+    private String phone;
     private Double income;
     private Double requestedValue;
     private int paymentTerm;

@@ -1,11 +1,11 @@
 package com.br.proposta_app.repository;
 
-import com.br.proposta_app.entity.Proposal;
+import com.br.proposta_app.entity.Proposta;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProposalRepository extends CrudRepository<Proposal, Long> {
+public interface PropostaRepository extends CrudRepository<Proposta, Long> {
 
 
 }

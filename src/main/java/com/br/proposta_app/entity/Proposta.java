@@ -7,26 +7,26 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity(name = "Proposal")
-@Table(name = "proposals")
+@Entity(name = "Proposta")
+@Table(name = "propostas")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
-public class Proposal {
+public class Proposta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Double requestedValue;
-    private int paymentTerm;
-    private Boolean approved;
-    private boolean integrated;
-    private String observation;
+    private Double valorSolicitado;
+    private int prazoPagamento;
+    private Boolean aprovado;
+    private boolean integrada;
+    private String observacao;
 
     @OneToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
 }

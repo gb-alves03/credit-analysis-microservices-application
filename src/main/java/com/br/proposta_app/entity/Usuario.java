@@ -12,26 +12,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.UUID;
-
-@Entity(name = "User")
-@Table(name = "users")
+@Entity(name = "Usuario")
+@Table(name = "usuarios")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
-public class User {
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String lastName;
+    private String nome;
+    private String sobrenome;
     private String cpf;
-    private String phone;
-    private Double income;
+    private String telefone;
+    private Double renda;
 
-    @OneToOne(mappedBy = "user")
-    private Proposal proposal;
+    @OneToOne(mappedBy = "usuario")
+    private Proposta proposta;
 }

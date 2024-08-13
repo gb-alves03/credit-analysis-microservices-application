@@ -20,7 +20,7 @@ public class PropostaController {
 
     @PostMapping
     public ResponseEntity<PropostaResponseDto> createProposal(@RequestBody @Valid PropostaRequestDto requestDto) {
-        PropostaResponseDto response = propostaService.createProposal(requestDto);
+        PropostaResponseDto response = propostaService.criarProposta(requestDto);
 
         return ResponseEntity.created(ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
@@ -32,6 +32,6 @@ public class PropostaController {
 
     @GetMapping
     public ResponseEntity<List<PropostaResponseDto>> getProposal() {
-        return ResponseEntity.ok(propostaService.getProposal());
+        return ResponseEntity.ok(propostaService.obterProposta());
     }
 }
